@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create TODO</title>
+    <!-- Add CSS styles or link to a CSS file for styling -->
+</head>
+<body>
+    <h1>Create TODO</h1>
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        <label for="title">Title Name:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="category">Category:</label><br>
+        <input type="text" id="category" name="category" required><br><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
+        <input type="submit" value="Create"><br><br>
+    </form>
+    <a href="{% url 'list' %}"><button>Back to TODO List</button></a>
+</body>
+</html>
